@@ -1,6 +1,8 @@
 NodeUtil
 ====================
 
+This is just a tool collect for easy use of some tool library. I will pack some operation for more easy to use.
+
 ## Install
 
 <pre>
