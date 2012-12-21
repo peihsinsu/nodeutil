@@ -1,22 +1,37 @@
 NodeUtil
 ====================
 
-<h2>Usage</h2>
+## Install
+
+<pre>
+npm install nodeutil
+</pre>
+
+## Usage
 
 <pre>
 var nu = require('nodeutil');
+</pre>
 
-//Using logger
+## Using logger
+
+<pre>
 var log = nu.logger.getInstance();
 log.info('Test logger...');
+</pre>
 
-//Using dateutil
+## Using dateutil
+
+<pre>
 var dateutil = no.dateutil;
 var pattern = 'yyyymmdd hh24:mi:ss';
 dateutil.getNowString(pattern);
 dateutil.getDateString(new Date(), pattern)
+</pre>
 
-//Using step
+## Using step
+
+<pre>
 var Step = nu.step;
 Step(
   function step1(){
@@ -29,6 +44,12 @@ Step(
   },
   ...
 )
-
 </pre>
 
+## Using cfgutil
+
+<pre>
+var cfgutil = nu.cfgutil;
+//read from json file
+var cfg = cfgutil.readJsonCfg('path to json config file');
+</pre>
