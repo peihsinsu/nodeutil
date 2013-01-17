@@ -55,3 +55,23 @@ var cfgutil = nu.cfgutil;
 //read from json file
 var cfg = cfgutil.readJsonCfg('path to json config file');
 </pre>
+
+## Using mailutil
+
+```javascript
+var nu = require('nodeutil');
+var mailer = nu.mailutil;
+
+mailer.init(
+  {"smtpOptions":{"service":"Gmail", "auth": {"user": "your-account","pass": "your-password"}}}
+);
+
+mailer.sendNodeMailAsync('receiver@gmail.com',
+  'test mail send...',
+  'send mail OK!',
+  true,
+  function(){
+    console.log('Send mail done...');
+  }
+);
+```
