@@ -63,7 +63,7 @@ var nu = require('nodeutil');
 var mailer = nu.mailutil;
 
 mailer.init(
-  {"smtpOptions":{"service":"Gmail", "auth": {"user": "your-account","pass": "your-password"}}}
+  {"smtpOptions":{"service":"Gmail", "auth": {"user": "your-account","pass": "your-password"}}, "sender": "NO-REPLY <no-reply@micloud.tw>"}
 );
 
 mailer.sendNodeMailAsync('receiver@gmail.com',
