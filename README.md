@@ -59,7 +59,6 @@ var cfg = cfgutil.readJsonCfg('path to json config file');
 ## Using mailutil
 
 ```javascript
-var nu = require('nodeutil');
 var mailer = nu.mailutil;
 
 mailer.init(
@@ -78,7 +77,7 @@ mailer.sendNodeMailAsync('receiver@gmail.com',
 
 ## Convert Json to Table
 ```javascript
-var json2table = require('nodeutil').json2table;
+var json2table = nu.json2table;
 var json = [{aaa1:123, bbb1:223}, {aaa2:223, bbb2:323}];
 console.log(json2table.ConvertJsonToTable(json));
 ```
