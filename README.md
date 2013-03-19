@@ -78,10 +78,10 @@ mailer.sendNodeMailAsync('receiver@gmail.com',
 ## Convert Json to Table
 ```javascript
 var json2table = nu.json2table;
-var json = [{aaa1:123, bbb1:223}, {aaa2:223, bbb2:323}];
+var json = [{aaa:123, bbb:223}, {aaa:223, bbb:323}];
 console.log(json2table.ConvertJsonToTable(json));
 ```
 The result:
 ```html
-<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>aaa1</th><th>bbb1</th></tr></thead><tbody><tr><td>123</td><td>223</td></tr><tr><td><I>{0}</I></td><td><I>{0}</I></td></tr></tbody></table>
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>aaa</th><th>bbb</th></tr></thead><tbody><tr><td>123</td><td>223</td></tr><tr><td>223</td><td>323</td></tr></tbody></table>
 ```
