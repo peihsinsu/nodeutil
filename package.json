@@ -14,9 +14,9 @@
   ],
   "dependencies": {
     "nodemailer": "0.3.37",
-    "node-expat": "*",
-    "request": "*",
-    "log4js": "*"
+    "node-expat": "2.0.0",
+    "request": "2.16.2",
+    "log4js": "0.5.7"
   },
   "devDependencies": {
     "nodemailer":"*"
