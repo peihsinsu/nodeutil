@@ -75,6 +75,25 @@ mailer.sendNodeMailAsync('receiver@gmail.com',
 );
 ```
 
+Using mailutil through localhost sendmail service
+
+```javascript
+var mailer = require('nodeutil').mailutil;
+
+mailer.init(
+      {"smtpOptions":{"host":"localhost"}, "sender": "NO-REPLY <no-reply@micloud.tw>"}
+    );
+
+mailer.sendNodeMailAsync('yourmail@gmail.com',
+  'test mail send...',
+  'send mail OK!',
+  true,
+  function(){
+    console.log('Send mail done...');
+  }
+);
+```
+
 ## Convert Json to Table
 ```javascript
 var json2table = nu.json2table;
