@@ -59,7 +59,6 @@ var cfg = cfgutil.readJsonCfg('path to json config file');
 ## Using mailutil
 
 ```javascript
-var nu = require('nodeutil');
 var mailer = nu.mailutil;
 
 mailer.init(
@@ -74,4 +73,34 @@ mailer.sendNodeMailAsync('receiver@gmail.com',
     console.log('Send mail done...');
   }
 );
+```
+
+Using mailutil through localhost sendmail service
+
+```javascript
+var mailer = require('nodeutil').mailutil;
+
+mailer.init(
+      {"smtpOptions":{"host":"localhost"}, "sender": "NO-REPLY <no-reply@micloud.tw>"}
+    );
+
+mailer.sendNodeMailAsync('yourmail@gmail.com',
+  'test mail send...',
+  'send mail OK!',
+  true,
+  function(){
+    console.log('Send mail done...');
+  }
+);
+```
+
+## Convert Json to Table
+```javascript
+var json2table = nu.json2table;
+var json = [{aaa:123, bbb:223}, {aaa:223, bbb:323}];
+console.log(json2table.ConvertJsonToTable(json));
+```
+The result:
+```html
+<table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>aaa</th><th>bbb</th></tr></thead><tbody><tr><td>123</td><td>223</td></tr><tr><td>223</td><td>323</td></tr></tbody></table>
 ```
