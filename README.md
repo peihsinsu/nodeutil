@@ -110,7 +110,16 @@ mailer.sendNodeMail({
     to:["receiver1@gmail.com"],
     subject: "test123",
     html:"<h1>TEST123</h1>",
-    cc:["cc-receiver@gmail.com"]
+    cc:["cc-receiver@gmail.com"],
+    attachments: [//see detail: https://github.com/andris9/Nodemailer#attachment-fields
+       {   // utf-8 string as an attachment
+            fileName: "text1.txt",
+            contents: "hello world!"
+        },
+        {   // binary buffer as an attachment
+            fileName: "text2.txt",
+            contents: new Buffer("hello world!","utf-8")
+        }]
   },
   true, function(res){
     console.log(res);
