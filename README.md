@@ -94,6 +94,30 @@ mailer.sendNodeMailAsync('yourmail@gmail.com',
 );
 ```
 
+Advance using mailutil...
+
+```javascript
+mailer.init(
+  {"smtpOptions": {"service":"Gmail",
+    "auth": {
+      "user": "your_mail_username", "pass": "your_password"
+    }},
+    "sender": "NO-REPLY <no-reply@your.mail.address>"
+  }
+);
+
+mailer.sendNodeMail({
+    to:["receiver1@gmail.com"],
+    subject: "test123",
+    html:"<h1>TEST123</h1>",
+    cc:["cc-receiver@gmail.com"]
+  },
+  true, function(res){
+    console.log(res);
+  }
+);
+```
+
 ## Convert Json to Table
 ```javascript
 var json2table = nu.json2table;
