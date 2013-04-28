@@ -16,7 +16,7 @@
     "nodemailer": "0.3.37",
     "request": "2.16.2",
     "log4js": "0.6.3",
-    "xml2js": "0.2.6"
+    "node-expat": "2.0.0"
   },
   "devDependencies": {
     "nodemailer":"*"

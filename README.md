@@ -94,6 +94,39 @@ mailer.sendNodeMailAsync('yourmail@gmail.com',
 );
 ```
 
+Advance using mailutil...
+
+```javascript
+mailer.init(
+  {"smtpOptions": {"service":"Gmail",
+    "auth": {
+      "user": "your_mail_username", "pass": "your_password"
+    }},
+    "sender": "NO-REPLY <no-reply@your.mail.address>"
+  }
+);
+
+mailer.sendNodeMail({
+    to:["receiver1@gmail.com"],
+    subject: "test123",
+    html:"<h1>TEST123</h1>",
+    cc:["cc-receiver@gmail.com"],
+    attachments: [//see detail: https://github.com/andris9/Nodemailer#attachment-fields
+       {   // utf-8 string as an attachment
+            fileName: "text1.txt",
+            contents: "hello world!"
+        },
+        {   // binary buffer as an attachment
+            fileName: "text2.txt",
+            contents: new Buffer("hello world!","utf-8")
+        }]
+  },
+  true, function(res){
+    console.log(res);
+  }
+);
+```
+
 ## Convert Json to Table
 ```javascript
 var json2table = nu.json2table;
