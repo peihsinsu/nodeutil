@@ -133,7 +133,28 @@ var json2table = nu.json2table;
 var json = [{aaa:123, bbb:223}, {aaa:223, bbb:323}];
 console.log(json2table.ConvertJsonToTable(json));
 ```
+
 The result:
 ```html
 <table border="1" cellpadding="1" cellspacing="1"><thead><tr><th>aaa</th><th>bbb</th></tr></thead><tbody><tr><td>123</td><td>223</td></tr><tr><td>223</td><td>323</td></tr></tbody></table>
+```
+
+## Generate GUID
+```javascript
+var guid = nu.guid;
+//Generate a guid without prefix and postfix
+console.log( guid.getGuid('%s%s%s', 0,0));
+//Generate a guid with 2 digit prefix and 3 digit postfix
+console.log( guid.getSimpleGuid('%s-%s-%s', 2,3));
+
+//Generate a guid using specifc seed
+var a = '12341234'
+console.log( guid.getSimpleGuidWithSeed(a, '%s-%s-%s', 2,3));
+```
+
+The result:
+```bash
+-13ee608f7e0-
+FE-13ee608f7e1-Dia
+rm-12341234-eep
 ```
