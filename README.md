@@ -22,6 +22,11 @@ var log = nu.logger.getInstance();
 log.info('Test logger...');
 </pre>
 
+Or you can insert log name to getInstance() to catelogry your log...
+<pre>
+var log = nu.logger.getInstance('MAIN_LOG');
+</pre>
+
 ## Using dateutil
 
 <pre>
