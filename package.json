@@ -1,7 +1,7 @@
 {
   "name": "nodeutil",
   "description": "Node.js Utility",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "author": {
     "name": "Simon Su",
     "email": "simonsu@mitac.com.tw"
@@ -15,6 +15,7 @@
   "dependencies": {
     "nodemailer": "0.3.37",
     "request": "2.16.2",
+    "xml2js": "*",
     "log4js": "0.6.3"
   },
   "devDependencies": {
