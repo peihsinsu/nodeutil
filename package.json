@@ -16,10 +16,11 @@
     "nodemailer": "0.3.37",
     "request": "2.16.2",
     "xml2js": "*",
-    "log4js": "0.6.3"
+    "log4js": "0.6.3",
+    "underscore": "~1.5.0"
   },
   "devDependencies": {
-    "nodemailer":"*"
+    "nodemailer": "*"
   },
   "bin": {
     "nmail": "./bin/nmail"
