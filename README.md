@@ -27,6 +27,35 @@ Or you can insert log name to getInstance() to catelogry your log...
 var log = nu.logger.getInstance('MAIN_LOG');
 </pre>
 
+You can also set logger some advance properties:
+
+```
+var log = require('nodeutil').logger.getInstance('io_sockets', {
+	path:	'your-logger-path',
+	catg: 'log-category-name',
+	level: 'log-level',
+	logMaxSize: 'max-log-file-size',
+	logBackup: 'backup-days'
+});
+```
+
+## Advance Logger
+
+If your need to do more with log, you can extend the log4js setting like this:
+
+```
+var log = nu.logger.addInstance('appjs', {
+		"type": "dateFile",
+		"filename": 'test-log.log',
+		"pattern": "-yyyy-MM-dd-ss.log",
+		"alwaysIncludePattern": true
+});
+```
+
+In addAppender(), you can put appender config using log4js config format. Related config format, please reference to log4js: https://github.com/nomiddlename/log4js-node
+
+For date rolling log, please reference here for dateFile appender: https://github.com/nomiddlename/log4js-node/wiki/Date-rolling-file-appender
+
 ## Using dateutil
 
 <pre>
