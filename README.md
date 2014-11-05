@@ -5,27 +5,28 @@ This is just a tool collect for easy use of some tool library. I will pack some 
 
 ## Install
 
-<pre>
+```
 npm install nodeutil
-</pre>
+```
 
 ## Usage
 
-<pre>
+```
 var nu = require('nodeutil');
-</pre>
+```
 
 ## Using logger
 
-<pre>
+```
 var log = nu.logger.getInstance();
 log.info('Test logger...');
-</pre>
+```
 
 Or you can insert log name to getInstance() to catelogry your log...
-<pre>
+
+```
 var log = nu.logger.getInstance('MAIN_LOG');
-</pre>
+```
 
 You can also set logger some advance properties:
 
@@ -58,16 +59,16 @@ For date rolling log, please reference here for dateFile appender: https://githu
 
 ## Using dateutil
 
-<pre>
+```
 var dateutil = no.dateutil;
 var pattern = 'yyyymmdd hh24:mi:ss';
 dateutil.getNowString(pattern);
 dateutil.getDateString(new Date(), pattern)
-</pre>
+```
 
 ## Using step
 
-<pre>
+```
 var Step = nu.step;
 Step(
   function step1(){
@@ -80,15 +81,15 @@ Step(
   },
   ...
 )
-</pre>
+```
 
 ## Using cfgutil
 
-<pre>
+```
 var cfgutil = nu.cfgutil;
 //read from json file
 var cfg = cfgutil.readJsonCfg('path to json config file');
-</pre>
+```
 
 ## Using mailutil
 
