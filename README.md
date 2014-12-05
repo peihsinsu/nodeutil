@@ -57,6 +57,15 @@ In addAppender(), you can put appender config using log4js config format. Relate
 
 For date rolling log, please reference here for dateFile appender: https://github.com/nomiddlename/log4js-node/wiki/Date-rolling-file-appender
 
+## Simple Log
+
+Simple log is fix format using js file name and function name as prefix. It is focus that user can easily find the log exist in
+
+```
+var log = require('nodeutil').simplelog;
+log.info('Hello %s!');
+```
+
 ## Using dateutil
 
 ```
