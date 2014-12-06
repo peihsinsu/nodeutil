@@ -1,7 +1,7 @@
 {
   "name": "nodeutil",
   "description": "Node.js Utility",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "author": {
     "name": "Simon Su",
     "email": "simonsu.mail@gmail.com"
