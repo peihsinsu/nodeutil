@@ -202,3 +202,94 @@ The result:
 FE-13ee608f7e1-Dia
 rm-12341234-eep
 ```
+
+## Simple Validator
+
+Create model
+
+```
+var validator = require('nodeutil').validator;
+var usermodel = {
+    username: {
+      type: "string", require: true, max: 200, desc: 'the username, must provide as an email address',
+      validator: validator.isEmail
+    },
+    password: {
+      type: "string", require: false, max: 200, desc: 'the password'
+    },
+    sex: {
+      type: "string", require: true, max: 200, desc: 'the sex'
+    },
+    created: {
+      type: "number", require: true, max: 200, "default":-1, desc: 'the create time in number format',
+      map: function(v) {
+        if(v == -1) return new Date().getTime();
+      }
+    },
+    user_type: {
+      type: "number", require: true, "default": 0, pick: [0,1,2], updatable: true, desc:'the user type to define the role of user'
+    },
+    test: {
+      type: "string", require: false, max: 200, desc: 'just for test',
+      map: function(v) {
+        return "111" + v;
+      }
+    }
+  }
+```
+
+If the object not exist sex:
+
+```
+//file: test.js
+var user = {
+  username: 'simon',
+  password: '123',
+  user_type: '0'
+}
+
+var result = validator.check(user, usermodel);
+
+console.log('check result:', result);
+```
+
+Run: 
+
+```
+$ node test
+
+/Users/peihsinsu/project/github-projects/nodeutil/lib/validator.js:66
+      if(!vo[k] && vo[k] != 0) throw "value of key [" + k + "] not found";
+                               ^
+value of key [sex] not found
+```
+
+If the object is valid
+
+```
+//file: test.js
+var user = {
+  username: 'simon',
+  password: '123',
+  user_type: '0',
+  sex: 'M'
+}
+
+var result = validator.check(user, usermodel);
+
+console.log('check result:', result);
+```
+
+Run:
+
+```
+$ node test
+check result: { username: 'simon',
+  password: '123',
+  sex: 'M',
+  created: 1456637453105,
+  user_type: '0' }
+```
+
+
+
