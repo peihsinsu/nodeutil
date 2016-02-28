@@ -20,7 +20,7 @@
     "underscore": "~1.5.0",
     "validator": "^5.0.0",
     "xml2js": "*"
-  }
+  },
   "keywords": [
     "utility"
   ],
