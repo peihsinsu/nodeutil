@@ -29,6 +29,6 @@
     "url": "https://github.com/peihsinsu/nodeutil"
   },
 	"scripts": {
-		"test": ""
+		"test": "mocha"
 	}
 }
